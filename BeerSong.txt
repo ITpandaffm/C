@@ -1,0 +1,35 @@
+//
+//  main.c
+//  BeerSong
+//
+//  Created by ffm on 16/6/17.
+//  Copyright (c) 2016年 ITPanda. All rights reserved.
+//
+
+#include <stdio.h>
+#include <unistd.h>
+
+void singTheSong(int numberOfBottles){
+    if (numberOfBottles==0) {
+        printf("There are simply no more bottles of beer on the wall.\n");
+        
+    }else{
+        printf("%d bottles of beer on the wall.%d bottles of beer.\n",numberOfBottles,numberOfBottles);
+        int oneFewer = numberOfBottles-1;
+        printf("Take one down,pass it around,%d bottles of beer on the wall.\n",oneFewer);
+        sleep(2);
+        singTheSong(oneFewer);//函数调用自己
+        
+        //在函数结束前打印出一条信息
+        printf("Put a bottle in the recycling, %d empty bottles in the bin.\n",numberOfBottles);
+        sleep(2);  //通过sleep函数来观察栈的情况 ＊先设置断点 --->然而并没有看到一条条弹出栈。失落。。
+    }
+}
+
+
+
+int main(int argc, const char * argv[]) {
+    //当然可以按照本来的歌词让它99句，但是4句更佳简洁明了
+    singTheSong(4);
+    return 0;
+}
