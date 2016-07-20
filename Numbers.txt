@@ -1,0 +1,32 @@
+//
+//  main.c
+//  Numbers
+//
+//  Created by ffm on 16/6/17.
+//  Copyright (c) 2016年 ITPanda. All rights reserved.
+//
+
+#include <stdio.h>
+#include <math.h>
+
+int main(int argc, const char * argv[]) {
+    int x = 255;
+    printf(" 十进制demical , %d\n",x);
+    printf(" 八进制octal ,%o\n",x);
+    printf(" 十六进制hexadecimal , %x\n",x);
+    
+    //针对位数位数很多的整数，可加入 l 或ll （分别针对long 和long long）
+    long a =255;
+    printf(" 十进制demical , %ld\n",a);
+    printf(" 八进制octal ,%lo\n",a);
+    printf(" 十六进制hexadecimal , %lx\n",a);
+    
+    //若要输出无符号的十进制 用u
+    unsigned long b = 255;
+    printf("%lu.\n",b);
+    
+    //尝试使用数学代码库 输出1弧度的正弦值 小数点后三位， （＊与三角函数有关的函数单位都是使用弧度！）
+    printf("%.3f",sin(1));
+    
+    return 0;
+}
